@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Pao & José (equipo Sortiz)🌙💖</title>
+<title>SORTIZ 🌙💖</title>
 
 <style>
 body {
@@ -27,7 +27,9 @@ body {
 
 h1 {
     color: #ffd6ec;
-    font-size: 32px;
+    font-size: 42px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(255,182,193,0.8);
 }
 
 .subtitle {
@@ -78,6 +80,19 @@ button:hover {
     animation: fall linear forwards;
 }
 
+/* LINEAS MAGICAS */
+.line {
+    position: fixed;
+    top: -20px;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,105,180,0.6));
+    opacity: 0.8;
+    animation: fall linear forwards;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(255,182,193,0.8);
+}
+
 @keyframes fall {
     to {
         transform: translateY(110vh);
@@ -108,13 +123,14 @@ button:hover {
 
 <div class="moon">🌙</div>
 
-<h1>Pao & José</h1>
-<div class="subtitle">Nuestro primer mes de por vida, mi amor ✨💖</div>
+<h1>SORTIZ</h1>
+
+<div class="subtitle">Nuestro primer mes de por vida ✨💖</div>
 
 <p>
-Bajo esta misma luna…<br>
-comenzó algo que no tiene fecha de caducidad.<br>
-Lo nuestro apenas empieza. 💫
+Fatum Nostrum.<br>
+Amor Aeternus.<br>
+In omnibus vitis. 💫
 </p>
 
 <!-- BOTONES -->
@@ -128,36 +144,35 @@ Lo nuestro apenas empieza. 💫
 
 <div id="p1" class="panel">
 <div class="decor">🐧💕🐧</div>
-Eres mi coincidencia favorita, mi pedacito de cielo…<br>
-de esas que la vida guarda solo para los amores eternos.
+Eres mi lugar seguro, mi lugar favorito, mi pedacito de cielo…<br>
+te quiero tanto tanto tanto.
 </div>
 
 <div id="p2" class="panel">
 <div class="decor">🌙✨</div>
-Si pudiera elegir de nuevo,<br>
-volvería a encontrarte bajo esta misma luna…<br>
-una y mil vidas más.
+Cada día y cada noche,<br>
+vuelvo a elegirnos bajo la misma luna…<br>
+en esta y mil vidas más.
 </div>
 
 <div id="p3" class="panel">
 <div class="decor">🌸🌸🌸</div>
-Como bugambilias floreciendo en primavera,<br>
-nuestro amor llegó a pintar de color<br>
-cada rincón de nuestro mundo.
+Como bugambilias floreciendo,<br>
+nuestro amor pinta de color<br>
+cada rincón del mundo, de nuestro camino.
 </div>
 
 <div id="p4" class="panel">
 <div class="decor">💞</div>
-Contigo todo se siente seguro,<br>
+Juntos todo se siente seguro,<br>
 bonito…<br>
-y maravillosamente real.
+y fuera de lo ordinario.
 </div>
 
 <div id="p5" class="panel">
 <div class="decor">🕯️🌙💖</div>
-Este es nuestro primer mes de por vida, mi amor…<br>
-nuestro amor<br>
-es una historia infinita. ✨
+Este es nuestro primer mes de por vida…<br>
+el primer mes de meses, años y vidas que nos faltan juntos por disfrutar mi amorchititito ✨
 </div>
 
 </div>
@@ -179,6 +194,17 @@ function crearCorazon(){
     setTimeout(()=>h.remove(),6000);
 }
 setInterval(crearCorazon,500);
+
+/* lluvia de lineas */
+function crearLinea(){
+    const l=document.createElement("div");
+    l.className="line";
+    l.style.left=Math.random()*100+"vw";
+    l.style.animationDuration=(2+Math.random()*2)+"s";
+    document.body.appendChild(l);
+    setTimeout(()=>l.remove(),5000);
+}
+setInterval(crearLinea,200);
 </script>
 
 </body>
