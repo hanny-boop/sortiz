@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pao & José (equipo Sortiz)🌙💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #1a1a40, #000010);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* TARJETA */
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 650px;
+    margin: 40px auto;
+    box-shadow: 0 0 40px rgba(255, 182, 193, 0.3);
+}
+
+h1 {
+    color: #ffd6ec;
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #ffeaa7;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+/* BOTONES */
+button {
+    margin: 8px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 20px;
+    background: #ff6fa5;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ff3d87;
+}
+
+/* PANELES */
+.panel {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 18px;
+    animation: fade .6s ease;
+}
+
+@keyframes fade {
+    from {opacity:0; transform: translateY(15px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* CORAZONES */
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 18px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* DECORACIONES */
+.decor {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.moon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9bceef.mp3?filename=romantic-love-11747.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+<div class="moon">🌙</div>
+
+<h1>Pao & José</h1>
+<div class="subtitle">Nuestro primer mes de por vida, mi amor ✨💖</div>
+
+<p>
+Bajo esta misma luna…<br>
+comenzó algo que no tiene fecha de caducidad.<br>
+Lo nuestro apenas empieza. 💫
+</p>
+
+<!-- BOTONES -->
+<button onclick="mostrar('p1')">Pícale aquí 💌</button>
+<button onclick="mostrar('p2')">Otro piquecito 🐧</button>
+<button onclick="mostrar('p3')">Uno más 🌸</button>
+<button onclick="mostrar('p4')">Este también 💫</button>
+<button onclick="mostrar('p5')">El último… o no 😏</button>
+
+<!-- PANELES -->
+
+<div id="p1" class="panel">
+<div class="decor">🐧💕🐧</div>
+Eres mi coincidencia favorita, mi pedacito de cielo…<br>
+de esas que la vida guarda solo para los amores eternos.
+</div>
+
+<div id="p2" class="panel">
+<div class="decor">🌙✨</div>
+Si pudiera elegir de nuevo,<br>
+volvería a encontrarte bajo esta misma luna…<br>
+una y mil vidas más.
+</div>
+
+<div id="p3" class="panel">
+<div class="decor">🌸🌸🌸</div>
+Como bugambilias floreciendo en primavera,<br>
+nuestro amor llegó a pintar de color<br>
+cada rincón de nuestro mundo.
+</div>
+
+<div id="p4" class="panel">
+<div class="decor">💞</div>
+Contigo todo se siente seguro,<br>
+bonito…<br>
+y maravillosamente real.
+</div>
+
+<div id="p5" class="panel">
+<div class="decor">🕯️🌙💖</div>
+Este es nuestro primer mes de por vida, mi amor…<br>
+nuestro amor<br>
+es una historia infinita. ✨
+</div>
+
+</div>
+
+<script>
+function mostrar(id) {
+    document.querySelectorAll('.panel').forEach(p => p.style.display='none');
+    document.getElementById(id).style.display = 'block';
+}
+
+/* lluvia de corazones */
+function crearCorazon(){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}
+setInterval(crearCorazon,500);
+</script>
+
+</body>
+</html>
